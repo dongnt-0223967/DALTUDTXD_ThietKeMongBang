@@ -61,17 +61,18 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="Red"
                                  IsChecked="True"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/Home.ico" Width="30" Height="40" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <TextBlock Text="Trang chủ" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         </StackPanel>
-                        
+
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="red"
-                                 IsChecked="True"
+                                 Tag="Red"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowCal1ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/floodedhouse.png" Width="30" Height="50" VerticalAlignment="Center" Margin="10,0,0,0"/>
@@ -80,8 +81,8 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="red"
-                                 IsChecked="True"
+                                 Tag="Red"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowCal2ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/Information.png" Width="30" Height="50" VerticalAlignment="Center" Margin="10,0,0,0"/>
@@ -90,18 +91,18 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="red"
-                                 IsChecked="True"
+                                 Tag="Red"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowCal3ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/download.png" Width="30" Height="50" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <TextBlock Text="Tải trọng" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         </StackPanel>
                     </RadioButton>
-                    
+
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="red"
-                                 IsChecked="True"
+                                 Tag="Red"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowCal4ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/math.png" Width="30" Height="50" VerticalAlignment="Center" Margin="10,0,0,0"/>
@@ -110,21 +111,93 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="red"
-                                 IsChecked="True"
+                                 Tag="Red"
+                                 GroupName="MainMenu"
                                  Command="{Binding ShowCal5ViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/abacus.png" Width="30" Height="50" VerticalAlignment="Center" Margin="10,0,0,0"/>
                             <TextBlock Text="Báo cáo kết quả" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                         </StackPanel>
                     </RadioButton>
+                    
                 </StackPanel>
-
+                
             </Border>
 
+            <!--Main Section-->
+            <Border CornerRadius="0,10,10,0"
+                    Grid.Column="1">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                        <GradientStop Color="#363636" Offset="0"/>
+                        <GradientStop Color="#1E1E1E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <!--Thanh điều khiển-->
+                        <RowDefinition Height="25"/>
+                        <!--Tiêu đề / Ghi chú-->
+                        <RowDefinition Height="35"/>
+                        <!--Phần nội dung-->
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--Control bar-->
+                    <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0"
+                                MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
+                                MouseEnter="pnlControlBar_MouseEnter">
+                        <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}"
+                                Click="btnClose_Click">
+                            <Image Source="/Images/ControlButton/close.png" Width="15" Height="25" VerticalAlignment="Center" Margin="0"/>
+                        </Button>
+
+                        <Button x:Name="btnMaximize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color6}"
+                                Click="btnMaximize_Click">
+                            <Image Source="/Images/ControlButton/move.png" Width="15" Height="25" VerticalAlignment="Center" Margin="0"/>
+                        </Button>
+
+                        <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color8}"
+                                Click="btnMinimize_Click">
+                            <Image Source="/Images/ControlButton/minimize.png" Width="15" Height="25" VerticalAlignment="Center" Margin="0"/>
+                        </Button>
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!--caption-->
+                        <StackPanel Grid.Column="0"
+                                    Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            
+                        </StackPanel>
+                    </Grid>
+                    <!--Nội Dung-->
+                    <ContentControl Content="{Binding CurrentChildView}"
+                                    Grid.Row="2"
+                                    Margin="25"
+                                    BorderThickness="20"/>
+                </Grid>
+
+            </Border>
         </Grid>
-
-
-
     </Border>
 </Window>

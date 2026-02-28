@@ -151,5 +151,17 @@
   <ItemGroup>
     <Resource Include="Images\floodedhouse.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Controlbutton\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Controlbutton\move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Controlbutton\minimize.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

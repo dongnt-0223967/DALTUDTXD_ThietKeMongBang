@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DALTUDTXD_ThietKeMongBang.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace DALTUDTXD_ThietKeMongBang
     /// </summary>
     public partial class App : Application
     {
+        protected void ApplicationStart(object sender, StartupEventArgs e)
+        {
+            var loginView = new LoginView();
+            loginView.Show();
+        }
     }
 }

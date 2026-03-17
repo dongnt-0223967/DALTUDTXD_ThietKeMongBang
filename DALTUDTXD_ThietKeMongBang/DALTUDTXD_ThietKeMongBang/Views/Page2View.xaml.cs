@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DALTUDTXD_ThietKeMongBang.Views
 {
     /// <summary>
-    /// Interaction logic for Taitrong.xaml
+    /// Interaction logic for Page2View.xaml
     /// </summary>
-    public partial class Taitrong : UserControl
+    public partial class Page2View : UserControl
     {
-        public Taitrong()
+        public Page2View()
         {
             InitializeComponent();
         }

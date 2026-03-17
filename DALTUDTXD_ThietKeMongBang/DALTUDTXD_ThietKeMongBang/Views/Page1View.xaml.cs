@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace DALTUDTXD_ThietKeMongBang.Views
 {
     /// <summary>
-    /// Interaction logic for Nendat.xaml
+    /// Interaction logic for Page1View.xaml
     /// </summary>
-    public partial class Nendat : UserControl
+    public partial class Page1View : UserControl
     {
-        public Nendat()
+        public Page1View()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -62,5 +62,10 @@ namespace DALTUDTXD_ThietKeMongBang.Views
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

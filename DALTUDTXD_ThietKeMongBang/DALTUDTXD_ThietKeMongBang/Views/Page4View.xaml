@@ -147,7 +147,33 @@
                        Foreground="{StaticResource color9Brush}"
                        FontSize="13"
                        Margin="5,15,0,0"/>
+                <TextBox x:Name="MomentInput"
+                         Text="{Binding ForceInput.Moment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
+                         Style="{StaticResource ModernTextBox}"
+                         Width="460"/>
+
+                <!-- Axial Force (N) Input -->
+                <TextBlock Text="Lực Dọc (N):"
+                         FontWeight="SemiBold"
+                         Foreground="{StaticResource color9Brush}"
+                         FontSize="13"
+                         Margin="5,15,0,0"/>
+                <TextBox x:Name="AxialForceInput"
+                         Text="{Binding ForceInput.AxialForce, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
+                         Style="{StaticResource ModernTextBox}"
+                         Width="460"/>
                 
+                <!-- Shear Force (Q) Input -->
+                <TextBlock Text="Lực Cắt (Q):"
+                           FontWeight="SemiBold"
+                           Foreground="{StaticResource color9Brush}"
+                           FontSize="13"
+                           Margin="5,15,0,0"/>
+                <TextBox x:Name="ShearForceInput"
+                         Text="{Binding ForceInput.ShearForce, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
+                         Style="{StaticResource ModernTextBox}"
+                         Width="460"/>
+
                 <!-- Nút Xác nhận -->
                 <Button Content="XÁC NHẬN"
                     Command="{Binding SaveCommand}"

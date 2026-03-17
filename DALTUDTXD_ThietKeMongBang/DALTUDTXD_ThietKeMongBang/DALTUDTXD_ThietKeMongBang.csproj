@@ -74,6 +74,9 @@
     <Compile Include="Views\Page4View.xaml.cs">
       <DependentUpon>Page4View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Page5View.xaml.cs">
+      <DependentUpon>Page5View.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,6 +110,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Page4View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page5View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

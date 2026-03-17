@@ -48,7 +48,7 @@ namespace DALTUDTXD_ThietKeMongBang.Views
             string username = txtUser.Text.Trim();
             string password = txtPassword.Password.Trim();
 
-            if (username == "admin" && password == "admin123")
+            if (username == "sftdt" && password == "tdt123")
             {
                 MainView mainView = new MainView();
                 mainView.Show();

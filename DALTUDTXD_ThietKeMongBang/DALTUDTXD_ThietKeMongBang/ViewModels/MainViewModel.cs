@@ -1,3 +1,4 @@
+using DALTUDTXD_ThietKeMongBang.Views;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -43,8 +44,8 @@ namespace DALTUDTXD_ThietKeMongBang.ViewModels
         private void ShowHomeView() => CurrentChildView = new HomeViewModel();
         private void ShowCal1View() => CurrentChildView = null; // TODO: replace with Cal1 view/viewmodel
         private void ShowCal2View() => CurrentChildView = null; // TODO: replace with Cal2 view/viewmodel
-        private void ShowCal3View() => CurrentChildView = null; // TODO: replace with Cal3 view/viewmodel
-        private void ShowCal4View() => CurrentChildView = null; // TODO: replace with Cal4 view/viewmodel
+        private void ShowCal3View() => CurrentChildView = new Page4View(); // TODO: replace with Cal3 view/viewmodel
+        private void ShowCal4View() => CurrentChildView = new Page5View(); // TODO: replace with Cal4 view/viewmodel
         private void ShowCal5View() => CurrentChildView = null; // TODO: replace with Cal5 view/viewmodel
 
         public event PropertyChangedEventHandler PropertyChanged;

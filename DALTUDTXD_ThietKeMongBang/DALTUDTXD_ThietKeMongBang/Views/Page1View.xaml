@@ -199,7 +199,6 @@
                          Foreground="Black"
                          Style="{StaticResource PrimaryButton}"  
                          Command="{Binding SaveGeologicalAxisCommand}"
-                         Click="Button_Click" Margin="20,0,0,0" 
                          Background="#FF1493"/>
                 </StackPanel>
             </StackPanel>

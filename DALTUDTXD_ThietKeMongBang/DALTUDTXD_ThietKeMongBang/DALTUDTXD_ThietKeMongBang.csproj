@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ConcreteProperties.cs" />
+    <Compile Include="Models\ConstructionEntry.cs" />
+    <Compile Include="Models\FoundationEntry.cs" />
+    <Compile Include="Models\UserAccountModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -74,8 +78,13 @@
     <Compile Include="Views\Page1View.xaml.cs">
       <DependentUpon>Page1View.xaml</DependentUpon>
     </Compile>
+thanhhc/feature/Page3Viewfix
     <Compile Include="Views\Page3View.xaml.cs">
       <DependentUpon>Page3View.xaml</DependentUpon>
+
+    <Compile Include="Views\Page2View.xaml.cs">
+      <DependentUpon>Page2View.xaml</DependentUpon>
+main
     </Compile>
     <Compile Include="Views\Page4View.xaml.cs">
       <DependentUpon>Page4View.xaml</DependentUpon>
@@ -119,7 +128,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+thanhhc/feature/Page3Viewfix
     <Page Include="Views\Page3View.xaml">
+
+    <Page Include="Views\Page2View.xaml">
+ main
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -198,8 +198,11 @@
                     <Button Content="💾 LƯU TRỤC ĐỊA CHẤT"
                          Foreground="Black"
                          Style="{StaticResource PrimaryButton}"  
+dongnt/feat/md
+                         Command="{Binding SaveGeologicalAxisCommand}"        
+
                          Command="{Binding SaveGeologicalAxisCommand}"
-                         Click="Button_Click" Margin="20,0,0,0" 
+main
                          Background="#FF1493"/>
                 </StackPanel>
             </StackPanel>

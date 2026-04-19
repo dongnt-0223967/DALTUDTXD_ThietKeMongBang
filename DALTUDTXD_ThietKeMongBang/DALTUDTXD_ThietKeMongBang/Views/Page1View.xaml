@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DALTUDTXD_ThietKeMongBang.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <UserControl.Resources>
-        <!--Color Resources-->
+        <!-- Color Resources -->
         <SolidColorBrush x:Key="primaryBackColor1Brush" Color="#1E1E1E"/>
         <SolidColorBrush x:Key="secondaryBackColor1Brush" Color="#2F2F2F"/>
         <SolidColorBrush x:Key="panelColorBrush" Color="#252525"/>
@@ -20,8 +20,8 @@
         <SolidColorBrush x:Key="plainTextColor1Brush" Color="#A0A0A0"/>
         <SolidColorBrush x:Key="selectionBrush" Color="#5C9EFF" Opacity="0.5"/>
 
-        <!-- Mordern TextBox Style -->
-        <Style x:Key="MordernTextBox" TargetType="TextBox">
+        <!-- Modern TextBox Style -->
+        <Style x:Key="ModernTextBox" TargetType="TextBox">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="8,4,8,4"/>
             <Setter Property="Width" Value="160"/>
@@ -31,24 +31,25 @@
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{StaticResource plainTextColor1Brush}"/>
+            <Setter Property="Foreground" Value="{StaticResource titleColor1Brush}"/>
+            <Setter Property="CaretBrush" Value="{StaticResource color3Brush}"/>
             <Setter Property="SelectionBrush" Value="{StaticResource selectionBrush}"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
-
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border Background="{TemplateBinding Background}" 
-              BorderBrush="{TemplateBinding BorderBrush}"
-              BorderThickness="{TemplateBinding BorderThickness}"
-              CornerRadius="6">
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
                             <ScrollViewer Margin="2" x:Name="PART_ContentHost"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
-        <!--Button Style-->
+
+        <!-- Button Style -->
         <Style x:Key="PrimaryButton" TargetType="Button">
             <Setter Property="Background" Value="{StaticResource color1Brush}"/>
             <Setter Property="Foreground" Value="{StaticResource titleColor1Brush}"/>
@@ -61,12 +62,12 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
-                     CornerRadius="8"
-                     BorderThickness="1"
-                     BorderBrush="{TemplateBinding BorderBrush}">
+                                CornerRadius="8"
+                                BorderThickness="1"
+                                BorderBrush="{TemplateBinding BorderBrush}">
                             <ContentPresenter HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center"
-                                   Margin="{TemplateBinding Padding}"/>
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -77,9 +78,10 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <!--DataGrid Style-->
+
+        <!-- DataGrid Style -->
         <Style x:Key="ModernDataGrid" TargetType="DataGrid">
-            <Setter Property="Background" Value="{StaticResource secondaryBackColor1Brush }"/>
+            <Setter Property="Background" Value="{StaticResource secondaryBackColor1Brush}"/>
             <Setter Property="Foreground" Value="{StaticResource titleColor1Brush}"/>
             <Setter Property="BorderBrush" Value="#444"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -109,135 +111,160 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </UserControl.Resources>
-    <Grid Background="Transparent">
+
+    <Grid Background="{StaticResource primaryBackColor1Brush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!--Input Section-->
-        <Border Background="{StaticResource panelColorBrush}" 
-             CornerRadius="10" 
-             Margin="10,10,10,5" 
-             Grid.Row="0"
-             BorderBrush="#444"
-             BorderThickness="1"
-             Padding="15">
-            <StackPanel>
-                <TextBlock Text="📍 NHẬP THÔNG SỐ ĐỊA CHẤT"
-                         FontSize="18" 
-                         FontWeight="Bold" 
-                         Foreground="{StaticResource color3Brush}" 
-                         Margin="0,0,0,10"/>
-                <UniformGrid Columns="3" HorizontalAlignment="Stretch" Margin="0,5">
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Số Thứ Tự Lớp Đất (STT)" Foreground="{StaticResource plainTextColor1Brush}"
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text ="{Binding NewEntry.SoThuTuLopDat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Số Hiệu Địa Chất " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.SoHieuDiaChat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Tên Lớp Đất " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.TenLopDat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Chiều Dày Lớp Đất (m) " Foreground="{StaticResource plainTextColor1Brush}" 
-                                 Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.ChieuDayLopDat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                               Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Khối Lượng Tự Nhiên (Kn/m³) " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.KhoiLuongTuNhien, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Góc Ma Sát Trong (°) " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.GocMaSatTrong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Độ Dính (kPa) " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.DoDinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Modun Biến Dạng (MPa) " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.ModunBienDang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                    <StackPanel Margin="8,4">
-                        <TextBlock Text="Vị Trí Móng " Foreground="{StaticResource plainTextColor1Brush}" 
-                                Margin="0,0,0,4" FontSize="12"/>
-                        <TextBox Text="{Binding NewEntry.ViTriMong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N2}}"
-                              Style="{StaticResource MordernTextBox}"/>
-                    </StackPanel>
-                </UniformGrid>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,30,5">
-                    <Button Content="➕ THÊM VÀO BẢNG"  
-                         Style="{StaticResource PrimaryButton}"  
-                         Command="{Binding AddFoundationCommand}"
-                         Background="LightBlue"
-                         Foreground="Black"/>
-                    <Button Content="💾 LƯU TRỤC ĐỊA CHẤT"
-                         Foreground="Black"
-                         Style="{StaticResource PrimaryButton}"  
-dongnt/feat/md
-                         Command="{Binding SaveGeologicalAxisCommand}"        
+            <Border Background="{StaticResource panelColorBrush}" CornerRadius="12" Margin="10" Padding="15" BorderBrush="#333" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="📌 THÔNG SỐ ĐỊA CHẤT" FontSize="18" FontWeight="Bold" Foreground="{StaticResource color3Brush}" Margin="0,0,0,15"/>
 
-                         Command="{Binding SaveGeologicalAxisCommand}"
-main
-                         Background="#FF1493"/>
+                    <UniformGrid Columns="3">
+                        <StackPanel Margin="5">
+                            <TextBlock Text="STT Lớp" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Sothutulopdat}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Số hiệu ĐC" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Sohieudiachat}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Tên lớp đất" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Tenlopdat}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Chiều dày (m)" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Chieudaylopdat}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Khối lượng TN" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Khoiluongtunhien}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Góc ma sát (°)" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Gocmasattrong}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Lực dính (kPa)" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Lucdinhket}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Mô đun (MPa)" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Modunbiendang}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="Vị trí móng" Foreground="{StaticResource plainTextColor1Brush}" FontSize="11" Margin="5,0"/>
+                            <TextBox Text="{Binding NewEntry.Vitrimong}" Style="{StaticResource ModernTextBox}"/>
+                        </StackPanel>
+                    </UniformGrid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,5">
+                        <Button Content="➕ THÊM VÀO BẢNG" Command="{Binding AddFoundationCommand}" Style="{StaticResource PrimaryButton}" Width="160"/>
+                        <Button Content="💾 LƯU TRỤC" Command="{Binding SaveGeologicalAxisCommand}" Style="{StaticResource PrimaryButton}" Background="{StaticResource color9Brush}" Margin="20,0,0,0" Width="160"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
-        </Border>
-        <!--DataGrid Section-->
-        <Border Grid.Row="1"
-             Background="{StaticResource secondaryBackColor1Brush}" 
-             CornerRadius="10" 
-             Margin="10,5,10,5" 
-             BorderBrush="#444"
-             BorderThickness="1"
-             Padding="18">
-            <StackPanel>
-                <TextBlock Text="📊 BẢNG THÔNG SỐ ĐỊA CHẤT" 
-                        FontSize="18" 
-                        FontWeight="Bold" 
-                        Foreground="{StaticResource color3Brush}" 
-                        Margin="0,0,0,10"/>
-                <DataGrid ItemsSource="{Binding FoundationList}"
-                       Style="{StaticResource ModernDataGrid}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="STT" Binding="{Binding Sothutulopdat}" Width="50" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Số hiệu ĐC" Binding="{Binding Sohieudiachat}" Width="80" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Tên lớp đất" Binding="{Binding Tenlopdat}" Width="120" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Chiều dày" Binding="{Binding Chieudaylopdat}" Width="80" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Khối lượng TN" Binding="{Binding Khoiluongtunhien}" Width="100" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Góc ma sát" Binding="{Binding Gocmasattrong}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Lực dính kết" Binding="{Binding Lucdinhket}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Mô đun BD" Binding="{Binding Modunbiendang}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
-                        <DataGridTextColumn Header="Vị trí móng" Binding="{Binding Vitrimong}" Width="100" Foreground="{StaticResource titleColor1Brush}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-        </Border>
+            </Border>
 
 
+            <Border Grid.Column="1" Background="#1A1A1A" CornerRadius="12" Margin="0,10,10,10" BorderBrush="#333" BorderThickness="1">
+                <Grid ClipToBounds="True">
+                    <TextBlock Text="BIỂU ĐỒ TRỤC ĐỊA CHẤT" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   Margin="10" Foreground="#555" FontWeight="Bold" FontSize="10" Panel.ZIndex="10"/>
+
+                    <Canvas x:Name="ViewportCanvas" Background="Transparent"
+                MouseWheel="Viewport_MouseWheel"
+                MouseRightButtonDown="Viewport_MouseRightButtonDown"
+                MouseRightButtonUp="Viewport_MouseRightButtonUp"
+                MouseMove="Viewport_MouseMove">
+
+                        <ItemsControl ItemsSource="{Binding FoundationList}">
+                            <ItemsControl.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="MainScale" ScaleX="1" ScaleY="1"/>
+                                    <TranslateTransform x:Name="MainTranslate" X="50" Y="50"/>
+                                </TransformGroup>
+                            </ItemsControl.RenderTransform>
+
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Canvas Width="100"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemContainerStyle>
+                                <Style TargetType="ContentPresenter">
+                                    <Setter Property="Canvas.Top" Value="{Binding RenderTop}"/>
+                                    <Setter Property="Canvas.Left" Value="0"/>
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Rectangle Width="100" Height="{Binding RenderHeight}" 
+                                       Fill="{Binding SoilColor}" Stroke="#444" StrokeThickness="0.5"/>
+
+                                        <Rectangle Width="100" Height="{Binding RenderHeight}" Opacity="0.1">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                    <GradientStop Color="Black" Offset="0"/>
+                                                    <GradientStop Color="Transparent" Offset="0.5"/>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Sohieudiachat}" Foreground="White" 
+                                           FontSize="10" FontWeight="Bold" HorizontalAlignment="Center">
+                                                <TextBlock.Effect>
+                                                    <DropShadowEffect BlurRadius="2" ShadowDepth="1"/>
+                                                </TextBlock.Effect>
+                                            </TextBlock>
+                                            <TextBlock Text="{Binding Chieudaylopdat, StringFormat={}{0}m}" 
+                                           Foreground="White" FontSize="9" HorizontalAlignment="Center" Opacity="0.8"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Canvas>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Data Display Section -->
+        <Border Grid.Row="1" 
+                Margin="10,5,10,10" 
+                CornerRadius="10"
+                Background="{StaticResource secondaryBackColor1Brush}"
+                BorderBrush="#444"
+                BorderThickness="1">
+            <DataGrid ItemsSource="{Binding FoundationList}"
+                      Style="{StaticResource ModernDataGrid}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="STT" Binding="{Binding Sothutulopdat}" Width="50" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Số hiệu ĐC" Binding="{Binding Sohieudiachat}" Width="80" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Tên lớp đất" Binding="{Binding Tenlopdat}" Width="120" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Chiều dày" Binding="{Binding Chieudaylopdat}" Width="80" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Khối lượng TN" Binding="{Binding Khoiluongtunhien}" Width="100" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Góc ma sát" Binding="{Binding Gocmasattrong}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Lực dính kết" Binding="{Binding Lucdinhket}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Mô đun BD" Binding="{Binding Modunbiendang}" Width="90" Foreground="{StaticResource titleColor1Brush}"/>
+                    <DataGridTextColumn Header="Vị trí móng" Binding="{Binding Vitrimong}" Width="100" Foreground="{StaticResource titleColor1Brush}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
 </UserControl>
+

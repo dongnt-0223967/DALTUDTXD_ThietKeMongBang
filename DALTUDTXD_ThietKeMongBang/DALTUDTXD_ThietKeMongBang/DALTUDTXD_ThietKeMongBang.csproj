@@ -60,12 +60,17 @@
     </ApplicationDefinition>
     <Compile Include="Models\ConcreteProperties.cs" />
     <Compile Include="Models\ConstructionEntry.cs" />
+    <Compile Include="Models\FootingResult.cs" />
+    <Compile Include="Models\ForceInputEntry.cs" />
     <Compile Include="Models\FoundationEntry.cs" />
+    <Compile Include="Models\GeologicalAxis.cs" />
+    <Compile Include="Models\SteelProperties.cs" />
     <Compile Include="Models\UserAccountModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModelCommand.cs" />
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
@@ -80,6 +85,9 @@
     </Compile>
     <Compile Include="Views\Page2View.xaml.cs">
       <DependentUpon>Page2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page3View.xaml.cs">
+      <DependentUpon>Page3View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Page4View.xaml.cs">
       <DependentUpon>Page4View.xaml</DependentUpon>
@@ -124,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Page2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page3View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

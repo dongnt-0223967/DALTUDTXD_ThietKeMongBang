@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:DALTUDTXD_ThietKeMongBang.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1000">
+   
     <UserControl.Resources>
         <!-- Color Resources -->
         <SolidColorBrush x:Key="primaryBackColor1Brush" Color="#1E1E1E"/>

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DALTUDTXD_ThietKeMongBang.Models
 {
-    internal class UserAccountModel
+    public class UserAccountModel
     {
+        public string Username { get; set; }
+        public string DisplayName { get; set; }
+        public byte[] ProfilePicture { get; set; }
     }
 }
